@@ -2,3 +2,11 @@
 root_url: https://public.wiwdata.com/engineering-challenge/data/
 # directory to download files to
 download_directory: temp\\
+
+# transformation settings
+tf:
+  columns:
+  - user_id
+  - length
+  - path
+  index: user_id

@@ -1,5 +1,5 @@
 import os
-from typing import Dict, List
+from typing import Dict, List, Any
 from urllib import request
 from pathlib import Path
 import yaml
@@ -36,13 +36,13 @@ def download_file_from_url(
         file.write(data)
 
 
-def load_yaml_file(file: str) -> Dict[str, str]:
+def load_yaml_file(file: str) -> Dict[str, Any]:
     """
     Load a yaml file, return its value as a Dict
 
     :param file: File to open
     :type file: str
-    :return: Dict[str, str]
+    :return: Dict[str, Any]
     """
     # Read YAML file
     with open(file, 'r') as stream:

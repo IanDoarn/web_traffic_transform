@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import List, Any
 from pathlib import Path
 import pandas as pd
 
@@ -60,15 +60,40 @@ def cleanup(directory: str) -> None:
 
 
 def tf_data_to_output(
-
+    csv_file: Path,
+    selected_columns: List[str],
+    index: str
 ) -> pd.DataFrame:
     """
     Transform data into the required output format.
 
     Per requirements:
 
-        Output contains one row for each user_id and has columns populated
-         with the length of time each user spent on each path.
-    :return:
+    Output contains one row for each user_id and has columns populated
+     with the length of time each user spent on each path.
+
+    :param csv_file: File to transform
+    :type csv_file: Path
+    :param selected_columns: Columns to use in initial grouping
+    :type selected_columns: List[str]
+    :param index: index column to use for pivot
+    :type index: str
+    :return: Transformed data
+    :rtype: pd.DataFrame
     """
-    ...
+
+    df = pd.read_csv(str(csv_file))
+    grouped = df[selected_columns].groupby(by=["user_id", "path"]).sum()
+
+    # https://stackoverflow.com/questions/49405336/pivoting-pandas-with-removal-of-some-headers-and-renaming-of-some-indexes
+    result = pd.pivot_table(
+        grouped,
+        index=index,
+        columns='path',
+        aggfunc=sum,
+        values='length'
+    )
+
+    # Remove the extra headers from pivot table, rename axis to nothing
+    # to ensure output is correct
+    return result.reset_index().rename_axis(None)
