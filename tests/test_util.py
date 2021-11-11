@@ -49,4 +49,8 @@ class TestUtils(unittest.TestCase):
         paths = src.util.generate_file_paths(root_url)
 
         assert len(paths) == 26
+
+        # test the first and last values is good enough
+        # as long as the length is 26
         assert paths[0] == f"{root_url}a.csv"
+        assert paths[-1] == f"{root_url}z.csv"
