@@ -11,7 +11,7 @@ columns represent the time spent on each of the pages.
 ## Usage
 Run the script from the command line as follows
 ```bash
-python3 main.py
+python main.py
 ```
 
 ## Requirements
