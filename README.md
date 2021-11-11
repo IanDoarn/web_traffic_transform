@@ -29,7 +29,7 @@ python3 -m venv env
 source env/bin/activate
 
 # install what we need
-pip install -r local\requirements-local.txt
+pip install -r requirements.txt
 ```
 #### Windows (Powershell)
 ```powershell
@@ -54,7 +54,7 @@ python -m venv winenv
 .\winenv\Scripts\activate
 
 # install what we need
-pip install -r local\requirements-local.txt
+pip install -r requirements.txt
 ```
 
 ## Unit Tests
