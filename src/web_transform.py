@@ -57,6 +57,7 @@ def cleanup(directory: str) -> None:
         _file = os.path.join(directory, file)
         if os.path.isfile(_file):
             os.remove(_file)
+    os.rmdir(directory)
 
 
 def tf_data_to_output(
