@@ -1,7 +1,7 @@
 # Root URL where files are stored/hosted
 root_url: https://public.wiwdata.com/engineering-challenge/data/
 # directory to download files to
-download_directory: temp\\
+download_directory: temp
 
 # default output file name
 outfile_csv: web_transform_result.csv
