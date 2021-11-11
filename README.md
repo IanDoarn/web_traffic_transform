@@ -9,7 +9,10 @@ columns represent the time spent on each of the pages.
 # How To
 
 ## Usage
-
+Run the script from the command line as follows
+```bash
+python3 main.py
+```
 
 ## Requirements
 To install the necessary requirements, it's recommended to create a virtualenv
