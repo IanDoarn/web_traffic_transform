@@ -23,7 +23,6 @@ To install the necessary requirements, it's recommended to create a virtualenv
 #### Unix / MacOS
 ```bash
 #!/bin/bash
-cd ../..
 
 # Create virtual env and activate
 python3 -m venv env
@@ -49,7 +48,6 @@ if ([string]$scope = "RemoteSigned") {
 }
 
 # Create the virtual env
-cd ../..
 python -m venv winenv
 
 # activate it
